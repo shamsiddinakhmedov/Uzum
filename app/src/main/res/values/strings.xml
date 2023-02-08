@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Uzum</string>
+
+    <string name="fragment_cards_cards">Cards</string>
+
+    <string name="fragment_add_card_adding_card">Adding card</string>
+    <string name="fragment_add_card_enter_card_info">Enter card info</string>
+    <string name="fragment_add_card_card_number">Card number</string>
+    <string name="fragment_add_card_rf_cards">Rf cards</string>
+    <string name="add_icon">add icon</string>
+    <string name="four_squares_icon">four squares icon</string>
+    <string name="change_icon">change icon</string>
+    <string name="card_item_card_image">card image</string>
+    <string name="card_item_main_card">Main Card</string>
+    <string name="card_item_card_type_image">card type image</string>
+    <string name="fragment_add_card_continue">Continue</string>
+    <string name="hint_card_number">0000 0000 0000 0000</string>
+    <string name="hint_card_expiry_date">MM/YY</string>
+    <string name="fragment_add_card_expiry_date">Expiry date</string>
+
+</resources>

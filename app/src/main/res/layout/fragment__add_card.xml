@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:id="@+id/add_icon"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/add_icon"
+                android:padding="12dp"
+                android:src="@drawable/ic_add_circle_theme_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rf_cards"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rf_cards"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="@string/fragment_add_card_rf_cards"
+                android:textColor="@color/theme_color"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/adding_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/fragment_add_card_adding_card"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/enter_card_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/fragment_add_card_enter_card_info"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/adding_card"
+        app:layout_constraintTop_toBottomOf="@+id/adding_card" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_card_info">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/card_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/fragment_add_card_card_number"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_number_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:boxStrokeColor="@color/stroke_color_edit"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/card_number_tv">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:drawableEnd="@drawable/scanner"
+                    android:hint="@string/hint_card_number"
+                    android:inputType="number"
+                    android:maxLength="20" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/enter_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/fragment_add_card_expiry_date"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_number_et" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_date_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:boxStrokeColor="@color/stroke_color_edit"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enter_date_tv"
+                tools:layout_editor_absoluteX="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_card_expiry_date"
+                    android:inputType="number"
+                    android:maxLength="5" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continue_btn"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="16dp"
+        android:text="@string/fragment_add_card_continue"
+        android:enabled="false"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

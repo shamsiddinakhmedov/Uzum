@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/cardsFragment">
+    <fragment
+        android:id="@+id/cardsFragment"
+        android:name="com.example.uzum.presentation.view.fragments.cards.CardsFragment"
+        android:label="CardsFragment"
+        tools:layout="@layout/fragment_cards">
+        <action
+            android:id="@+id/to_addCardFragment"
+            app:destination="@id/addCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardsDetailFragment"
+        android:name="com.example.uzum.presentation.view.fragments.cards_detail.CardsDetailFragment"
+        android:label="CardsDetailFragment"
+        tools:layout="@layout/fragment_cards_detail" />
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.example.uzum.presentation.view.fragments.add_card.AddCardFragment"
+        android:label="AddCardFragment"
+        tools:layout="@layout/fragment__add_card" />
+</navigation>

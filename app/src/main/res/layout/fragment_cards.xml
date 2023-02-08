@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/fragment_cards_cards">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:id="@+id/add_icon"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/add_icon"
+                android:padding="16dp"
+                android:src="@drawable/ic_add_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/four_squares_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/four_squares_icon"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/four_squares_icon"
+                android:padding="16dp"
+                android:src="@drawable/ic_four_squares"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/change_icon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/change_icon"
+                android:layout_width="?actionBarSize"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/change_icon"
+                android:padding="16dp"
+                android:src="@drawable/ic_refresh"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorColor="@color/theme_color"
+        app:tabIndicatorHeight="4dp"
+        app:tabMaxWidth="0dp"
+        app:tabMode="scrollable"
+        app:tabTextAppearance="@style/TabText"
+        app:tabTextColor="@color/black" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>
