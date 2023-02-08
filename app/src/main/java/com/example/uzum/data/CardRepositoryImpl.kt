@@ -4,6 +4,7 @@ import com.example.uzum.domain.model.Card
 import com.example.uzum.domain.repo.CardRepository
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import timber.log.Timber
 import javax.inject.Inject
 
 class CardRepositoryImpl @Inject constructor(
@@ -11,6 +12,7 @@ class CardRepositoryImpl @Inject constructor(
 ) : CardRepository {
     private lateinit var list: ArrayList<Card>
     var cardReference: CollectionReference = fireStore.collection("card")
+    val TAG = "TAG"
 
     override fun writeToDataBase(card: Card) {
         val cardData = mapOf(
@@ -29,7 +31,11 @@ class CardRepositoryImpl @Inject constructor(
             "sum" to "0.00",
             "validThru" to card.validThru
         )
-        cardReference.add(cardData).addOnSuccessListener { }
+        cardReference.add(cardData).addOnSuccessListener {
+            Timber.tag(TAG).d("message inserted: ${it.id}")
+        }.addOnCanceledListener {
+            Timber.tag(TAG).d("error:")
+        }
     }
 
     override fun readToDB(): List<Card> {

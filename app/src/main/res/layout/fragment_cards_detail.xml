@@ -16,6 +16,8 @@
         android:textSize="32sp"
         android:textStyle="bold"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
         tools:listitem="@layout/card_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

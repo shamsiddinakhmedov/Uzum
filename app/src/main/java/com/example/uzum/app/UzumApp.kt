@@ -7,7 +7,6 @@ import timber.log.Timber
 
 @HiltAndroidApp
 class UzumApp : Application() {
-
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG) {

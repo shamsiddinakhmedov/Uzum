@@ -7,7 +7,10 @@ import com.example.uzum.app.common.Constants.itemsTabLayout
 import com.example.uzum.databinding.FragmentCardsBinding
 import com.example.uzum.presentation.arcitecture.BaseFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class CardsFragment : BaseFragment<FragmentCardsBinding>(FragmentCardsBinding::inflate) {
